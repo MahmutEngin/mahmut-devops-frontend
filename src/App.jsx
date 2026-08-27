@@ -7,7 +7,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+  const API_URL = import.meta.env.VITE_BACKEND_URL || 'https://mahmut-backend.team-vit-devops.nl';
 
   const fetchBackendData = async () => {
     setLoading(true);
@@ -27,8 +27,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: '0 auto' }}>
-      <h1>DevOps Projesi Frontend</h1>
+    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
       <h1>DevOps Projesi Frontend - CI/CD Test v2</h1>
       <p><strong>Uygulama Versiyonu:</strong> 1.0.0</p>
       <p><strong>Son Güncelleme:</strong> {new Date().toLocaleDateString()}</p>
@@ -36,7 +35,7 @@ function App() {
       <hr style={{ margin: '2rem 0' }} />
 
       <h2>Backend Bağlantı Testi</h2>
-      <button onClick={fetchBackendData} style={{ padding: '10px 15px', cursor: 'pointer' }}>
+      <button onClick={fetchBackendData} style={{ padding: '10px 15px', cursor: 'pointer', margin: '10px 0' }}>
         Backend'den Veri Çek
       </button>
 
@@ -44,7 +43,7 @@ function App() {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       
       {backendData && (
-        <div style={{ marginTop: '1rem', padding: '1rem', background: '#f4f4f4', borderRadius: '5px' }}>
+        <div style={{ marginTop: '1rem', padding: '1rem', background: '#f4f4f4', borderRadius: '5px', textAlign: 'left' }}>
           <h3>Backend'den Gelen Cevap:</h3>
           <pre>{JSON.stringify(backendData, null, 2)}</pre>
         </div>
