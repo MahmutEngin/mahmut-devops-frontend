@@ -1,16 +1,16 @@
-# React + Vite
+# Mahmut DevOps Frontend Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, DevOps eğitimi kapsamında geliştirilmiş ve Ubuntu VPS üzerinde canlıya alınmış React/Vite web uygulamasıdır.
 
-Currently, two official plugins are available:
+## 🚀 Proje Bilgileri & Domain
+* **Canlı Web Adresi:** https://mahmut-frontend.team-vit-devops.nl
+* **Kullanılan Teknolojiler:** React, Vite, Nginx, Certbot (SSL), GitHub Actions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 💡 Özellikler
+* Ana sayfa arayüzü ve versiyon bilgisi gösterimi.
+* Backend API ile HTTPS üzerinden entegrasyon ve canlı veri gösterimi.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💻 Local Geliştirme Ortamı
+1. Bağımlılıkları yükleyin:
+   ```bash
+   npm install
