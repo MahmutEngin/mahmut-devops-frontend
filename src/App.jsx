@@ -29,6 +29,7 @@ function App() {
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: '0 auto' }}>
       <h1>DevOps Projesi Frontend</h1>
+      <h1>DevOps Projesi Frontend - CI/CD Test v2</h1>
       <p><strong>Uygulama Versiyonu:</strong> 1.0.0</p>
       <p><strong>Son Güncelleme:</strong> {new Date().toLocaleDateString()}</p>
       
