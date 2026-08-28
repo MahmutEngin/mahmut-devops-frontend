@@ -1,16 +1,21 @@
-# Mahmut DevOps Frontend Application
+# DevOps Projesi - Frontend Uygulaması
 
-Bu proje, DevOps eğitimi kapsamında geliştirilmiş ve Ubuntu VPS üzerinde canlıya alınmış React/Vite web uygulamasıdır.
+Bu proje, DevOps eğitimi kapsamında hazırlanan Vite + React mimarisine sahip frontend uygulamasıdır. Canlı ortamda Nginx üzerinden statik olarak sunulmakta ve HTTPS ile korunmaktadır.
 
-## 🚀 Proje Bilgileri & Domain
-* **Canlı Web Adresi:** https://mahmut-frontend.team-vit-devops.nl
-* **Kullanılan Teknolojiler:** React, Vite, Nginx, Certbot (SSL), GitHub Actions
+## 🚀 Kullanılan Teknolojiler
+- **Framework / Kütüphane:** React (Vite)
+- **HTTP İstemcisi:** Axios
+- **Sunucu / Web Server:** Nginx (Ubuntu VPS)
+- **CI/CD:** GitHub Actions
+- **SSL Sertifikası:** Let's Encrypt (Certbot)
 
-## 💡 Özellikler
-* Ana sayfa arayüzü ve versiyon bilgisi gösterimi.
-* Backend API ile HTTPS üzerinden entegrasyon ve canlı veri gösterimi.
+## 🌐 Canlı Bağlantı Bilgisi
+- **Frontend Domain:** `https://mahmut-frontend.team-vit-devops.nl`
+- **Backend API URL:** `https://mahmut-backend.team-vit-devops.nl`
 
-## 💻 Local Geliştirme Ortamı
-1. Bağımlılıkları yükleyin:
+## ⚙️ Local Ortamda Çalıştırma
+
+1. Repository'yi klonlayın:
    ```bash
-   npm install
+   git clone [https://github.com/MahmutEngin/mahmut-devops-frontend.git](https://github.com/MahmutEngin/mahmut-devops-frontend.git)
+   cd mahmut-devops-frontend
