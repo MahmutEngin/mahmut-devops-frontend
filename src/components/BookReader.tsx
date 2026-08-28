@@ -77,7 +77,7 @@ export const BookReader: React.FC = () => {
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
         <h1 style={{ color: '#2563eb', fontSize: '28px', fontWeight: 'bold', margin: '0 0 6px 0' }}>
-          TaalCompleet Dijital Asistanı
+          Taal Dijital Asistanı
         </h1>
         <p style={{ color: '#4b5563', fontSize: '14px', margin: 0 }}>
           Sol menüden ünitenizi seçin, metni okuyun ve soruları çözün.
