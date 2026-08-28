@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
+import { BookReader } from './components/BookReader';
 
 function App() {
   const [backendData, setBackendData] = useState(null);
@@ -16,7 +16,7 @@ function App() {
       const response = await axios.get(`${API_URL}/api/info`);
       setBackendData(response.data);
     } catch (err) {
-      setError('Backend uygulamasına erişilemedi.');
+      setError('Backend servisine erişilemedi.');
     } finally {
       setLoading(false);
     }
@@ -27,27 +27,33 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-      <h1>DevOps Projesi Frontend - CI/CD Test v2</h1>
-      <p><strong>Uygulama Versiyonu:</strong> 1.0.1</p>
-      <p><strong>Son Güncelleme:</strong> {new Date().toLocaleDateString()}</p>
-      
-      <hr style={{ margin: '2rem 0' }} />
-
-      <h2>Backend Bağlantı Testi</h2>
-      <button onClick={fetchBackendData} style={{ padding: '10px 15px', cursor: 'pointer', margin: '10px 0' }}>
-        Backend'den Veri Çek
-      </button>
-
-      {loading && <p>Yükleniyor...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      
-      {backendData && (
-        <div style={{ marginTop: '1rem', padding: '1rem', background: '#f4f4f4', borderRadius: '5px', textAlign: 'left' }}>
-          <h3>Backend'den Gelen Cevap:</h3>
-          <pre>{JSON.stringify(backendData, null, 2)}</pre>
+    <div className="min-h-screen bg-gray-100">
+      <div className="bg-slate-800 text-white p-3 text-xs">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+          <div className="flex items-center gap-4">
+            <span>🚀 <strong>Frontend v1.0.1</strong></span>
+            <span>📅 Güncelleme: {new Date().toLocaleDateString()}</span>
+          </div>
+          
+          <div className="flex items-center gap-3">
+            <button
+              onClick={fetchBackendData}
+              className="bg-blue-600 hover:bg-blue-500 text-white px-2.5 py-1 rounded text-xs transition-colors"
+            >
+              API Bağlantısını Test Et
+            </button>
+            {loading && <span className="text-yellow-400">Yükleniyor...</span>}
+            {error && <span className="text-red-400">{error}</span>}
+            {backendData && (
+              <span className="text-green-400 font-mono">
+                API Durum: {backendData.application} ({backendData.version} - {backendData.environment})
+              </span>
+            )}
+          </div>
         </div>
-      )}
+      </div>
+
+      <BookReader />
     </div>
   );
 }
