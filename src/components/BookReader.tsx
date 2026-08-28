@@ -72,7 +72,7 @@ export const BookReader: React.FC = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#f3f4f6', minHeight: '100vh', padding: '16px', fontFamily: 'system-ui, sans-serif' }}>
+    <div style={{ backgroundColor: '#f3f4f6', minHeight: '100vh', padding: '24px', width: '100%', fontFamily: 'system-ui, sans-serif' }}>
       
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '20px' }}>
