@@ -33,6 +33,14 @@ function App() {
           <div className="flex items-center gap-4">
             <span>🚀 <strong>Frontend v1.0.1</strong></span>
             <span>📅 Güncelleme: {new Date().toLocaleDateString()}</span>
+            <a
+              href="/rapor.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded text-xs transition-colors font-semibold no-underline"
+            >
+              📄 Proje Raporunu Oku
+            </a>
           </div>
           
           <div className="flex items-center gap-3">

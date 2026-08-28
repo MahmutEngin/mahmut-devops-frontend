@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps Projesi Teslimat Raporu - Mahmut Engin</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-banner {
+      border-bottom: 3px solid #2563eb;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #2563eb;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background-color: #f8fafc;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    .meta-table td {
+      padding: 12px 16px;
+      font-size: 13px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .meta-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .meta-label {
+      font-weight: 600;
+      color: #475569;
+      width: 30%;
+    }
+
+    .meta-value {
+      color: #0f172a;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      border-left: 4px solid #2563eb;
+      padding-left: 10px;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      page-break-after: avoid;
+    }
+
+    p, li {
+      font-size: 13px;
+      color: #334155;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 12px;
+    }
+
+    .data-table th, .data-table td {
+      border: 1px solid #cbd5e1;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .data-table th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .data-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    pre {
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 14px 16px;
+      border-radius: 6px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 11px;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 12px 0;
+      page-break-inside: avoid;
+    }
+
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      background-color: #f1f5f9;
+      color: #2563eb;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .badge-success {
+      background-color: #dcfce7;
+      color: #15803d;
+    }
+
+    .badge-blue {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+
+    .link {
+      color: #2563eb;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <div class="header-banner">
+    <div>
+      <h1 class="title">DevOps Projesi Teslimat Raporu</h1>
+      <p class="subtitle">Full-Stack Canlıya Alım & Taal Dijital Asistanı Mimarisi</p>
+    </div>
+    <div style="text-align: right;">
+      <span class="badge badge-success">SÜREÇ TAMAMLANDI</span>
+    </div>
+  </div>
+
+  <!-- Meta Table -->
+  <table class="meta-table">
+    <tr>
+      <td class="meta-label">Geliştirici / Öğrenci:</td>
+      <td class="meta-value">Mahmut Engin</td>
+    </tr>
+    <tr>
+      <td class="meta-label">Teslim Tarihi:</td>
+      <td class="meta-value">29 Ağustos 2026</td>
+    </tr>
+    <tr>
+      <td class="meta-label">Proje Adı:</td>
+      <td class="meta-value">DevOps Projesi — Full-Stack CI/CD Pipeline & Taal Dijital Asistanı</td>
+    </tr>
+    <tr>
+      <td class="meta-label">Mimari Yapı:</td>
+      <td class="meta-value">React (Vite) Frontend + Express Node.js Backend + Nginx Reverse Proxy + PM2</td>
+    </tr>
+  </table>
+
+  <!-- 1. Bölüm -->
+  <h2>1. Repository ve Canlı Erişim Bağlantıları</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Bileşen</th>
+        <th>Erişim Tipi</th>
+        <th>URL / Bağlantı</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend GitHub Repo</strong></td>
+        <td><span class="badge badge-blue">Kaynak Kod</span></td>
+        <td><a class="link" href="https://github.com/MahmutEngin/mahmut-devops-frontend">github.com/MahmutEngin/mahmut-devops-frontend</a></td>
+      </tr>
+      <tr>
+        <td><strong>Backend GitHub Repo</strong></td>
+        <td><span class="badge badge-blue">Kaynak Kod</span></td>
+        <td><a class="link" href="https://github.com/MahmutEngin/mahmut-devops-backend">github.com/MahmutEngin/mahmut-devops-backend</a></td>
+      </tr>
+      <tr>
+        <td><strong>Frontend Canlı Uygulama</strong></td>
+        <td><span class="badge badge-success">HTTPS / SSL</span></td>
+        <td><a class="link" href="https://mahmut-frontend.team-vit-devops.nl">mahmut-frontend.team-vit-devops.nl</a></td>
+      </tr>
+      <tr>
+        <td><strong>Backend Canlı API</strong></td>
+        <td><span class="badge badge-success">HTTPS / SSL</span></td>
+        <td><a class="link" href="https://mahmut-backend.team-vit-devops.nl">mahmut-backend.team-vit-devops.nl</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 2. Bölüm -->
+  <h2>2. Mimari Yapı ve Uygulama Detayları</h2>
+  <p>Proje yönergesi doğrultusunda modülerlik ve izolasyon ilkesine uygun olarak Frontend ve Backend katmanları iki ayrı bağımsız repository olarak kurgulanmıştır.</p>
+  
+  <h3>2.1 Backend API Endpoint'leri</h3>
+  <ul>
+    <li><code>GET /</code> &rarr; Server durum mesajı verir.</li>
+    <li><code>GET /api/health</code> &rarr; Health check kontrolü (CI/CD doğrulaması için).</li>
+    <li><code>GET /api/info</code> &rarr; Versiyon, uygulama adı ve ortam bilgisini JSON olarak döner.</li>
+  </ul>
+
+  <h3>2.2 Frontend Taal Dijital Asistanı Özellikleri</h3>
+  <ul>
+    <li><strong>API Entegrasyon Bandı:</strong> Sayfa üstünde canlı versiyon (<code>v1.0.1</code>) ve Backend API durum test mekanizması bulunur.</li>
+    <li><strong>Felemencke Öğrenim Modülleri:</strong> Thema 1'den Thema 8'e kadar okuma parçaları, açılır menüler ve alıştırma testleri.</li>
+    <li><strong>Metin Okuma (TTS) & Anlık Çeviri:</strong> <code>speechSynthesis</code> ile seslendirme; okuma parçası içinde seçilen kelime/cümlenin altında anında Türkçe çevirisi gösterilir.</li>
+    <li><strong>Tam Ekran (Full-Width) Arayüz:</strong> Sayfa kenar boşlukları optimize edilerek ekranı tam kaplayan esnek grid düzeni kurgulanmıştır.</li>
+  </ul>
+
+  <!-- 3. Bölüm -->
+  <h2>3. Sunucu Kurulumu & Kullanıcı İzolasyonu</h2>
+  <p>Sunucu güvenliği için <code>root</code> erişimleri sınırlandırılmış; deployment süreçlerini yürütmek adına <code>deploy</code> kullanıcısı oluşturulmuştur.</p>
+  
+  <h3>Nginx Sudoers Yetkilendirmesi (<code>/etc/sudoers.d/deploy-nginx</code>)</h3>
+  <pre>deploy ALL=(ALL) NOPASSWD: /usr/sbin/nginx -t, /usr/sbin/nginx -s reload</pre>
+
+  <!-- 4. Bölüm -->
+  <h2>4. Nginx Reverse Proxy ve SSL Konfigürasyonu</h2>
+  <p>Let's Encrypt Certbot ile her iki alt alan adı için SSL sertifikası tanımlanmış, HTTP (80) istekleri otomatik olarak HTTPS (443) protokolüne yönlendirilmiştir.</p>
+
+  <h3>Backend Reverse Proxy Blok Örneği</h3>
+  <pre>server {
+    server_name mahmut-backend.team-vit-devops.nl;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/mahmut-frontend.team-vit-devops.nl/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/mahmut-frontend.team-vit-devops.nl/privkey.pem;
+}</pre>
+
+  <!-- 5. Bölüm -->
+  <div class="page-break"></div>
+  <h2>5. Process Manager (PM2) Yapılandırması</h2>
+  <p>Node.js servisinin kesintisiz çalışması ve sistem yeniden başlatıldığında (reboot) otomatik devreye girmesi sağlanmıştır.</p>
+  
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Parametre</th>
+        <th>Değer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>App Name</td>
+        <td><code>mahmut-backend</code></td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td><span class="badge badge-success">online</span></td>
+      </tr>
+      <tr>
+        <td>Script Path</td>
+        <td><code>/var/www/mahmut-devops-backend/index.js</code></td>
+      </tr>
+      <tr>
+        <td>Systemd Service</td>
+        <td><code>pm2-deploy.service</code> (Aktif)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 6. Bölüm -->
+  <h2>6. CI/CD Pipeline & GitHub Workflows</h2>
+  <p>GitHub Actions otomasyonu ile <code>main</code> branch'ine yapılan her push sonrasında kodlar sunucuda otomatik olarak build edilip canlıya alınmaktadır.</p>
+
+  <h3>Frontend Workflow (<code>.github/workflows/deploy.yml</code>)</h3>
+  <pre>name: Deploy Frontend
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci || npm install
+      - run: npm run build
+      - uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            git pull origin main
+            npm install
+            npm run build
+            sudo nginx -t
+            sudo nginx -s reload</pre>
+
+  <!-- 7. Bölüm -->
+  <h2>7. Güvenlik Prensipleri ve Best Practices</h2>
+  <ul>
+    <li><strong>Port İzolasyonu:</strong> Node.js portu (3000) dış dünyaya kapatılmış, yalnızca Nginx Reverse Proxy üzerinden erişim sağlanmıştır.</li>
+    <li><strong>Hassas Veri Yönetimi:</strong> <code>.env</code> dosyaları repolara dahil edilmemiş, bağlantı bilgileri GitHub Secrets üzerinden yönetilmiştir.</li>
+    <li><strong>Nginx Syntax Check:</strong> CI/CD sürecinde <code>sudo nginx -t</code> ile sözdizimi doğrulanmadan reload yapılmaz.</li>
+  </ul>
+
+</body>
+</html>
