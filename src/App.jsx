@@ -41,6 +41,26 @@ function App() {
             >
               📄 Proje Raporunu Oku
             </a>
+            <a 
+              href="/devops-teslim-raporu.html" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{
+                backgroundColor: '#8b5cf6',
+                color: '#ffffff',
+                padding: '6px 12px',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                fontWeight: '500',
+                fontSize: '0.875rem',
+                marginLeft: '8px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px'
+              }}
+            >
+              📊 DevOps Teslim Raporu
+            </a>
           </div>
           
           <div className="flex items-center gap-3">
