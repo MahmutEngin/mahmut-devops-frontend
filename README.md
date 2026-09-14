@@ -27,10 +27,10 @@
 
 Proje, iki bağımsız Docker container'ının Dokploy orkestrasyonu altında çalıştırılması esasına dayanır:
 
-* **Frontend (React + Vite):** Multi-stage Dockerfile kullanılarak derlenmiş ve production aşamasında hafif bir `nginx:alpine` container'ı üzerinden sunulmaktadır. (Container içi Port: `80`)[cite: 1, 3, 4].
-* **Backend (Node.js + Express):** REST API mimarisinde geliştirilmiş, sağlık kontrolü (`/api/health`) ve sistem bilgisi (`/api/info`) endpoint'lerini sunar. (Container içi Port: `3000`)[cite: 1, 3, 4].
-* **Trafik Yönlendirme (Traefik):** VPS üzerindeki tüm 80 ve 443 portu trafiği Traefik reverse proxy tarafından karşılanır. Domain bazlı SSL otomasyonu Let's Encrypt entegrasyonu ile yürütülmektedir[cite: 1, 3, 4].
-* **CI/CD Otomasyonu:** GitHub App & Webhook entegrasyonu sayesinde `main` branch'ine atılan her `git push` Dokploy üzerinde otomatik rebuild ve redeploy akışını tetikler[cite: 1, 3, 4].
+* **Frontend (React + Vite):** Multi-stage Dockerfile kullanılarak derlenmiş ve production aşamasında hafif bir `nginx:alpine` container'ı üzerinden sunulmaktadır. (Container içi Port: `80`).
+* **Backend (Node.js + Express):** REST API mimarisinde geliştirilmiş, sağlık kontrolü (`/api/health`) ve sistem bilgisi (`/api/info`) endpoint'lerini sunar. (Container içi Port: `3000`).
+* **Trafik Yönlendirme (Traefik):** VPS üzerindeki tüm 80 ve 443 portu trafiği Traefik reverse proxy tarafından karşılanır. Domain bazlı SSL otomasyonu Let's Encrypt entegrasyonu ile yürütülmektedir.
+* **CI/CD Otomasyonu:** GitHub App & Webhook entegrasyonu sayesinde `main` branch'ine atılan her `git push` Dokploy üzerinde otomatik rebuild ve redeploy akışını tetikler.
 
 ---
 
@@ -51,6 +51,6 @@ Proje, iki bağımsız Docker container'ının Dokploy orkestrasyonu altında ç
 
 ## 🧪 5. Test ve Otomasyon Doğrulaması
 
-- [x] **Health Check Testi:** `https://mahmut-backend.team-vit-devops.nl/api/health` adresi `{"status": "UP"}` yanıtı vermektedir[cite: 4].
-- [x] **Auto-Deploy Testi:** Kod değişikliği sonrası Dokploy panelinde `1. Done (test: auto deploy test)` logu alınmış ve canlı sitede teyit edilmiştir[cite: 4].
-- [x] **SSL Güvenlik Testi:** Tüm domainlerin tarayıcı sertifikaları "Sertifika Geçerli (Let's Encrypt)" olarak onaylanmıştır[cite: 4].
+- [x] **Health Check Testi:** `https://mahmut-backend.team-vit-devops.nl/api/health` adresi `{"status": "UP"}` yanıtı vermektedir.
+- [x] **Auto-Deploy Testi:** Kod değişikliği sonrası Dokploy panelinde `1. Done` logu alınmış ve canlı sitede teyit edilmiştir.
+- [x] **SSL Güvenlik Testi:** Tüm domainlerin tarayıcı sertifikaları "Sertifika Geçerli (Let's Encrypt)" olarak onaylanmıştır.
