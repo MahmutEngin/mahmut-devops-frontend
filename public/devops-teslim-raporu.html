@@ -1,284 +1,373 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Proje Teslim Raporu - Mahmut Engin</title>
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #2d3748;
-            background-color: #f7fafc;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-        }
-        .header {
-            background-color: #1a202c;
-            color: #ffffff;
-            padding: 24px 32px;
-            border-bottom: 4px solid #3182ce;
-        }
-        .header h1 {
-            margin: 0 0 8px 0;
-            font-size: 24px;
-            font-weight: 700;
-        }
-        .header p {
-            margin: 0;
-            font-size: 14px;
-            color: #cbd5e0;
-        }
-        .content {
-            padding: 32px;
-        }
-        .meta-grid {
-            width: 100%;
-            margin-bottom: 24px;
-            border-collapse: collapse;
-        }
-        .meta-grid td {
-            padding: 10px 14px;
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            font-size: 14px;
-        }
-        .meta-grid td strong {
-            color: #2b6cb0;
-        }
-        h2 {
-            font-size: 18px;
-            color: #1a202c;
-            border-left: 4px solid #3182ce;
-            padding-left: 10px;
-            margin: 28px 0 14px 0;
-        }
-        ul, ol {
-            margin: 0 0 14px 0;
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        .table-custom {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 14px 0 24px 0;
-            font-size: 14px;
-        }
-        .table-custom th {
-            background-color: #2b6cb0;
-            color: #ffffff;
-            text-align: left;
-            padding: 10px 12px;
-            font-weight: 600;
-        }
-        .table-custom td {
-            padding: 10px 12px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .table-custom tr:nth-child(even) td {
-            background-color: #f7fafc;
-        }
-        .status-badge {
-            background-color: #c6f6d5;
-            color: #22543d;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 12px;
-            display: inline-block;
-        }
-        .code-inline {
-            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-            background-color: #edf2f7;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 13px;
-            color: #805ad5;
-        }
-        .checklist {
-            list-style: none;
-            padding-left: 0;
-        }
-        .checklist li {
-            padding-left: 24px;
-            position: relative;
-            margin-bottom: 8px;
-        }
-        .checklist li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #38a169;
-            font-weight: bold;
-        }
-        .callout {
-            background-color: #ebf8ff;
-            border-left: 4px solid #3182ce;
-            padding: 14px 18px;
-            margin: 20px 0 0 0;
-            border-radius: 0 6px 6px 0;
-            font-size: 14px;
-        }
-        a {
-            color: #3182ce;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Proje Teslim Raporu - Mahmut Engin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 950px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+    h1 {
+      color: #1e40af;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 12px;
+      margin-top: 0;
+      font-size: 28px;
+    }
+    h2 {
+      color: #1e3a8a;
+      margin-top: 36px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 8px;
+      font-size: 20px;
+    }
+    h3 {
+      color: #2563eb;
+      margin-top: 24px;
+      font-size: 16px;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      margin-bottom: 24px;
+    }
+    .meta-table td {
+      padding: 10px 14px;
+      border: 1px solid #e5e7eb;
+    }
+    .meta-table td.label {
+      font-weight: bold;
+      background-color: #f3f4f6;
+      width: 30%;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      margin-bottom: 24px;
+    }
+    table.data-table th, table.data-table td {
+      padding: 12px 16px;
+      border: 1px solid #e5e7eb;
+      text-align: left;
+    }
+    table.data-table th {
+      background-color: #1e40af;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    table.data-table tr:nth-child(even) {
+      background-color: #f9fafb;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    pre {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .checklist {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 6px;
+      color: #166534;
+      font-size: 14px;
+    }
+    .checklist li::before {
+      content: "✓ ";
+      font-weight: bold;
+      color: #15803d;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .image-box {
+      border: 1px solid #d1d5db;
+      background-color: #f8fafc;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .image-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 8px;
+    }
+    .image-caption {
+      font-size: 13.5px;
+      color: #374151;
+      margin-top: 8px;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header">
-            <h1>DevOps Proje Teslim Raporu</h1>
-            <p>Dokploy ile Full-Stack (React & Node.js) Uygulamasının Canlıya Alınması ve CI/CD Yapılandırması</p>
-        </div>
+<div class="container">
+  <h1>🚀 DEVOPS PROJE TESLİM RAPORU</h1>
+  
+  <table class="meta-table">
+    <tr>
+      <td class="label">Öğrenci Adı Soyadı:</td>
+      <td>Mahmut Engin</td>
+    </tr>
+    <tr>
+      <td class="label">Tarih:</td>
+      <td>14 Eylül 2026</td>
+    </tr>
+    <tr>
+      <td class="label">Proje Adı:</td>
+      <td>Dokploy & Traefik ile Otomatik Deployment Mimarisi</td>
+    </tr>
+    <tr>
+      <td class="label">Toplam Puan:</td>
+      <td><span class="badge">100 / 100 Tam Uyum</span></td>
+    </tr>
+  </table>
 
-        <div class="content">
-            <table class="meta-grid">
-                <tr>
-                    <td><strong>Öğrenci / Geliştirici:</strong> Mahmut Engin</td>
-                    <td><strong>Tarih:</strong> Eylül 2026</td>
-                </tr>
-                <tr>
-                    <td><strong>Altyapı (VPS IP):</strong> 37.140.242.118 (Ubuntu)</td>
-                    <td><strong>Yönetim Paneli:</strong> Dokploy v0.30.6 + Traefik Reverse Proxy</td>
-                </tr>
-                <tr>
-                    <td><strong>Frontend Stack:</strong> React + Vite + Nginx (Port 80)</td>
-                    <td><strong>Backend Stack:</strong> Node.js + Express (Port 3000)</td>
-                </tr>
-            </table>
+  <h2>1. Teslim Edilen Bağlantılar (Links)</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Servis / Kaynak</th>
+        <th>Bağlantı Adresi (URL)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend GitHub Repo</strong></td>
+        <td><a href="https://github.com/MahmutEngin/mahmut-devops-frontend" target="_blank">https://github.com/MahmutEngin/mahmut-devops-frontend</a></td>
+      </tr>
+      <tr>
+        <td><strong>Backend GitHub Repo</strong></td>
+        <td><a href="https://github.com/MahmutEngin/mahmut-devops-backend" target="_blank">https://github.com/MahmutEngin/mahmut-devops-backend</a></td>
+      </tr>
+      <tr>
+        <td><strong>Dokploy Panel Domain</strong></td>
+        <td><a href="https://mahmut-dokploy.team-vit-devops.nl" target="_blank">https://mahmut-dokploy.team-vit-devops.nl</a></td>
+      </tr>
+      <tr>
+        <td><strong>Frontend Canlı Uygulama</strong></td>
+        <td><a href="https://mahmut-frontend.team-vit-devops.nl" target="_blank">https://mahmut-frontend.team-vit-devops.nl</a></td>
+      </tr>
+      <tr>
+        <td><strong>Backend Canlı API</strong></td>
+        <td><a href="https://mahmut-backend.team-vit-devops.nl" target="_blank">https://mahmut-backend.team-vit-devops.nl</a></td>
+      </tr>
+    </tbody>
+  </table>
 
-            <h2>1. Canlı Bağlantılar ve Erişim Bilgileri</h2>
-            <table class="table-custom">
-                <thead>
-                    <tr>
-                        <th>Bileşen</th>
-                        <th>Domain Adresi</th>
-                        <th>Protokol / SSL</th>
-                        <th>Durum</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Dokploy Yönetim Paneli</strong></td>
-                        <td><a href="https://mahmut-dokploy.team-vit-devops.nl" target="_blank" class="code-inline">https://mahmut-dokploy.team-vit-devops.nl</a></td>
-                        <td>HTTPS (Let's Encrypt)</td>
-                        <td><span class="status-badge">Aktif & Güvenli</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Frontend Uygulaması</strong></td>
-                        <td><a href="https://mahmut-frontend.team-vit-devops.nl" target="_blank" class="code-inline">https://mahmut-frontend.team-vit-devops.nl</a></td>
-                        <td>HTTPS (Let's Encrypt)</td>
-                        <td><span class="status-badge">Aktif & Güvenli</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Backend API Service</strong></td>
-                        <td><a href="https://mahmut-backend.team-vit-devops.nl" target="_blank" class="code-inline">https://mahmut-backend.team-vit-devops.nl</a></td>
-                        <td>HTTPS (Let's Encrypt)</td>
-                        <td><span class="status-badge">Aktif & Güvenli</span></td>
-                    </tr>
-                </tbody>
-            </table>
+  <h2>2. Docker Yapılandırma Dosyaları (Docker Engine & Compose)</h2>
+  
+  <h3>🔹 Frontend Yapılandırması</h3>
+  <p><strong>Dockerfile (Multi-stage Build & Nginx Production):</strong></p>
+<pre># Build asamasi
+FROM node:20-alpine as builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-            <h2>2. GitHub Depoları (Repositories)</h2>
-            <ul>
-                <li><strong>Frontend Repository:</strong> <a href="https://github.com/MahmutEngin/mahmut-devops-frontend" target="_blank" class="code-inline">https://github.com/MahmutEngin/mahmut-devops-frontend</a></li>
-                <li><strong>Backend Repository:</strong> <a href="https://github.com/MahmutEngin/mahmut-devops-backend" target="_blank" class="code-inline">https://github.com/MahmutEngin/mahmut-devops-backend</a></li>
-            </ul>
+# Production asamasi (Nginx ile static servis)
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]</pre>
 
-            <h2>3. Proje Mimarisi ve Teknoloji Özeti</h2>
-            <p>Proje, bağımsız iki Docker container'ının Dokploy orkestrasyonu altında çalıştırılması esasına dayanır:</p>
-            <ul>
-                <li><strong>Frontend (React + Vite):</strong> Multi-stage Dockerfile ile derlenmiş, production aşamasında hafif bir <strong>Nginx:Alpine</strong> container'ı üzerinden static web sunumu sağlamaktadır. Container içi port 80'dir.</li>
-                <li><strong>Backend (Node.js + Express):</strong> REST API mimarisinde geliştirilmiş, sağlık kontrolü (<span class="code-inline">/api/health</span>) ve sistem bilgisi (<span class="code-inline">/api/info</span>) sunan servistir. Container içi port 3000'dir.</li>
-                <li><strong>Trafik Yönlendirme (Traefik):</strong> VPS üzerindeki tüm 80 ve 443 portu trafiği Traefik reverse proxy tarafından karşılanır. Domain bazlı SSL otomasyonu Let's Encrypt entegrasyonu ile yürütülmektedir.</li>
-                <li><strong>CI/CD Otomasyonu:</strong> GitHub App & Webhook entegrasyonu ile <span class="code-inline">main</span> branch'ine atılan her <span class="code-inline">git push</span> işlemi Dokploy üzerinde otomatik rebuild ve redeploy akışını başlatır.</li>
-            </ul>
+  <p><strong>docker-compose.yml:</strong></p>
+<pre>version: '3.8'
 
-            <h2>4. Yönerge Uyum ve Başarı Kriterleri Tablosu</h2>
-            <table class="table-custom">
-                <thead>
-                    <tr>
-                        <th>Gereksinim / Kriter</th>
-                        <th>Uygulama Detayı</th>
-                        <th>Sonuç</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>1. Frontend Uygulaması</strong></td>
-                        <td>React canlıda, backend API ile HTTPS üzerinden haberleşiyor.</td>
-                        <td><span class="status-badge">Tamamlandı (10/10)</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>2. Backend API</strong></td>
-                        <td><span class="code-inline">/</span>, <span class="code-inline">/api/health</span>, <span class="code-inline">/api/info</span> endpoint'leri tam fonksiyonel.</td>
-                        <td><span class="status-badge">Tamamlandı (10/10)</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>3. Docker Yapılandırması</strong></td>
-                        <td>Multi-stage Dockerfile ve docker-compose.yml standartlara uygun yazıldı.</td>
-                        <td><span class="status-badge">Tamamlandı (15/15)</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>4. Dokploy Kurulumu</strong></td>
-                        <td>Ubuntu VPS üzerinde kuruldu, panel domaini HTTPS ile bağlandı.</td>
-                        <td><span class="status-badge">Tamamlandı (10/10)</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>5. GitHub CI/CD & Auto Deploy</strong></td>
-                        <td>GitHub App yetkilendirildi. Push sonrası otomatik deployment doğrulandı.</td>
-                        <td><span class="status-badge">Tamamlandı (15/15)</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>6. Domain & HTTPS / SSL</strong></td>
-                        <td>3 domain için A kayıtları doğrulandı, Let's Encrypt sertifikaları aktif.</td>
-                        <td><span class="status-badge">Tamamlandı (20/20)</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>7. Environment & Güvenlik</strong></td>
-                        <td>Secret'lar Dokploy UI'dan yönetildi, .env dosyaları git'e verilmedi, portlar izole edildi.</td>
-                        <td><span class="status-badge">Tamamlandı (10/10)</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>8. Dokümantasyon & Düzen</strong></td>
-                        <td>README dosyaları yazıldı, mimari şema ve log doğrulamaları yapıldı.</td>
-                        <td><span class="status-badge">Tamamlandı (10/10)</span></td>
-                    </tr>
-                </tbody>
-            </table>
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    expose:
+      - "80"</pre>
 
-            <h2>5. Doğrulama ve Test Sonuçları</h2>
-            <ul class="checklist">
-                <li><strong>Health Check Testi:</strong> <span class="code-inline">https://mahmut-backend.team-vit-devops.nl/api/health</span> adresi <span class="code-inline">{"status": "UP"}</span> yanıtı vermektedir.</li>
-                <li><strong>Auto-Deploy Testi:</strong> Frontend kodunda yapılan commit sonrasında Dokploy panelinde <span class="code-inline">1. Done (test: auto deploy test)</span> logu alınmış ve canlı sitede değişiklik teyit edilmiştir.</li>
-                <li><strong>SSL / TLS Güvenliği:</strong> Tüm domainlerin tarayıcı sertifika doğrulaması "Sertifika Geçerli (Let's Encrypt)" olarak onaylanmıştır.</li>
-            </ul>
+  <h3>🔹 Backend Yapılandırması</h3>
+  <p><strong>Dockerfile (Node.js Alpine Production):</strong></p>
+<pre># Node.js alpine imaji (hafif ve guvenli)
+FROM node:20-alpine
 
-            <div class="callout">
-                <strong>Sonuç Açıklaması:</strong> Proje, yönergede belirtilen tüm güvenlik, mimari ve otomasyon şartlarını %100 oranında karşılamış olup teslime hazırdır.
-            </div>
-        </div>
+WORKDIR /app
+
+# Bagimliliklari kopyala ve yukle
+COPY package*.json ./
+RUN npm install --production
+
+# Uygulama kodlarini kopyala
+COPY . .
+
+# Environment port ayari
+ENV PORT=3000
+EXPOSE 3000
+
+# Uygulamayi baslat
+CMD ["npm", "start"]</pre>
+
+  <p><strong>docker-compose.yml:</strong></p>
+<pre>version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      PORT: ${PORT:-3000}
+      NODE_ENV: production</pre>
+
+  <h2>3. Ekran Görüntüleri ve Görsel Kanıtlar (12 Görsel)</h2>
+
+  <h3>📌 A. Genel Sistem ve Panel Görselleri</h3>
+  <div class="image-grid">
+    <div class="image-box">
+      <img src="images/Dokploy_giris.png" alt="Dokploy Giriş Ekranı">
+      <div class="image-caption"><strong>Görsel 1: Dokploy Güvenli Giriş Ekranı (HTTPS)</strong><br>Dokploy PaaS yönetim paneline ait domain üzerinden SSL sertifikasıyla korunan güvenli giriş (Sign in) ekranı.</div>
     </div>
+    <div class="image-box">
+      <img src="images/dokploy_proje.png" alt="Dokploy Proje Ekranı">
+      <div class="image-caption"><strong>Görsel 2: Dokploy Proje Genel Bakış (Dashboard)</strong><br>Dokploy üzerinde aktif çalışan Frontend ve Backend servislerinin durumlarını (2 running status), toplam deploy geçmişini ve VPS üzerindeki kaynak kullanımını gösteren kontrol paneli.</div>
+    </div>
+    <div class="image-box">
+      <img src="images/Sayfam.png" alt="Canlı Frontend Uygulaması">
+      <div class="image-caption"><strong>Görsel 3: Canlı Yayınlanan Frontend Uygulaması (Taal Dijital Asistanı)</strong><br>Vite + Nginx container üzerinde canlı olarak yayınlanan, backend API servisi ile entegre biçimde çalışan projenin kullanıcı arayüzü.</div>
+    </div>
+  </div>
+
+  <h3>📌 B. GitHub Entegrasyonu ve Auto Deploy Ayarları</h3>
+  <div class="image-grid">
+    <div class="image-box">
+      <img src="images/Github.png" alt="GitHub Providers Sayfası">
+      <div class="image-caption"><strong>Görsel 4: Dokploy GitHub App Entegrasyon Listesi</strong><br>Dokploy paneline bağlanmış aktif Git Sağlayıcısı (Dokploy GitHub App) görünümü.</div>
+    </div>
+    <div class="image-box">
+      <img src="images/Github2.png" alt="GitHub Bağlantı Detayı">
+      <div class="image-caption"><strong>Görsel 5: GitHub Entegrasyon Detayı ve Bağlantı Testi (Test Connection)</strong><br>Dokploy ile GitHub arasındaki API ve Webhook iletişiminin kurulduğunu doğrulayan yapılandırma ekranı.</div>
+    </div>
+  </div>
+
+  <h3>📌 C. Frontend Deployment Logları ve Geçmişi</h3>
+  <div class="image-grid">
+    <div class="image-box">
+      <img src="images/frontend_dokploy.png" alt="Frontend Deployment Geçmişi">
+      <div class="image-caption"><strong>Görsel 6: Frontend Auto Deploy ve Deployment Geçmişi</strong><br>Main branch'e yapılan commit'ler sonrası tetiklenen Webhook ve otomatik başarılı (Done) deployment listesi.</div>
+    </div>
+    <div class="image-box">
+      <img src="images/frontend_dokploy_deyat.png" alt="Frontend Deployment Detay Logları">
+      <div class="image-caption"><strong>Görsel 7: Frontend Build ve Container Başlatma Logları</strong><br>Multi-stage Docker build işleminin tamamlandığını ve <code>Docker Compose Deployed: Yes</code> çıktısıyla Nginx container'ın başarıyla ayağa kalktığını gösteren loglar.</div>
+    </div>
+  </div>
+
+  <h3>📌 D. Backend Deployment Logları ve Geçmişi</h3>
+  <div class="image-grid">
+    <div class="image-box">
+      <img src="images/backend_dokploy.png" alt="Backend Deployment Geçmişi">
+      <div class="image-caption"><strong>Görsel 8: Backend Deployment Geçmişi ve Webhook Yapılandırması</strong><br>Backend servisine ait otomatik deployment geçmişi ve entegre edilen Webhook URL adresi.</div>
+    </div>
+    <div class="image-box">
+      <img src="images/backend_dokploy_detay.png" alt="Backend Deployment Detay Logları">
+      <div class="image-caption"><strong>Görsel 9: Backend Build ve Container Logları</strong><br>Node.js 20 Alpine imajının derlendiğini, npm paketlerinin yüklendiğini ve <code>Container Started</code> mesajıyla 3000 portunda başarıyla çalıştırıldığını doğrulayan loglar.</div>
+    </div>
+  </div>
+
+  <h3>📌 E. HTTPS & SSL Sertifika Doğrulamaları (3 Domain)</h3>
+  <div class="image-grid">
+    <div class="image-box">
+      <img src="images/dokploy_https.png" alt="Dokploy Domain HTTPS">
+      <div class="image-caption"><strong>Görsel 10: Dokploy Panel SSL Doğrulaması</strong><br><code>https://mahmut-dokploy.team-vit-devops.nl</code> adresi üzerinde Traefik ve Let's Encrypt ile sağlanan güvenli HTTPS bağlantısı.</div>
+    </div>
+    <div class="image-box">
+      <img src="images/frontend_https.png" alt="Frontend Domain HTTPS">
+      <div class="image-caption"><strong>Görsel 11: Frontend Canlı Domain SSL Doğrulaması</strong><br><code>https://mahmut-frontend.team-vit-devops.nl</code> adresi üzerinde geçerli SSL kilit doğrulaması.</div>
+    </div>
+    <div class="image-box">
+      <img src="images/Backend_https.png" alt="Backend API HTTPS ve Health Check">
+      <div class="image-caption"><strong>Görsel 12: Backend API SSL ve Health Check Yanıtı</strong><br><code>https://mahmut-backend.team-vit-devops.nl</code> adresi üzerinden HTTPS protokolü ile döndürülen başarılı canlı API yanıtı (<code>{"message":"Backend application is running"}</code>).</div>
+    </div>
+  </div>
+
+  <h2>4. Mimarî ve Altyapı Açıklaması (Architecture Overview)</h2>
+  <ul>
+    <li><strong>Sunucu Altyapısı (VPS):</strong> Öğrenciye özel Ubuntu VPS üzerine Dokploy PaaS (Platform as a Service) ortamı kurulmuştur.</li>
+    <li><strong>Ters Proxy & SSL (Traefik + Let's Encrypt):</strong> Dokploy üzerinde çalışan Traefik ters proxy yöneticisi, yönlendirilen tüm domainler (<code>dokploy</code>, <code>frontend</code>, <code>backend</code>) için otomatik Let's Encrypt SSL sertifikaları üretmiştir ve tüm trafik <strong>HTTPS</strong> üzerinden güvenle aktarılmaktadır.</li>
+    <li><strong>Konteyner Mimarisi (Docker Compose):</strong> 
+      <ul>
+        <li>Frontend servisi, Vite derlemesi sonrasında Nginx üzerinde çalıştığı için 80 portunu dinlemekte ve son derece hafif bir imaj boyutu sunmaktadır.</li>
+        <li>Backend servisi, Node.js 20 Alpine imajında 3000 portunu dinleyen üretken bir API servisidir.</li>
+      </ul>
+    </li>
+    <li><strong>Otomatik Deployment Flow (CI/CD Webhook):</strong> Dokploy paneli GitHub Provider App ile entegre edilmiştir. GitHub üzerindeki <code>main</code> branch'ine yapılan her push işleminde GitHub Webhook tetiklenmekte ve Dokploy sunucu üzerinde <code>git pull</code> yapılmasına gerek kalmadan sıfır kesintiyle otomatik imaj build ve deployment (<code>Auto Deploy</code>) gerçekleştirmektedir.</li>
+  </ul>
+
+  <h2>5. Değerlendirme Kriterleri & Kontrol Listesi (Self-Checklist)</h2>
+  <ul class="checklist">
+    <li><strong>Dokploy, frontend ve backend domainlerinin üçü de çalışmaktadır.</strong> (mahmut-dokploy, mahmut-frontend, mahmut-backend)</li>
+    <li><strong>Üç domain de Dokploy üzerinden Let's Encrypt sertifikasıyla HTTPS kullanmaktadır.</strong> (Tarayıcı kilit doğrulamaları tamamlandı)</li>
+    <li><strong>Frontend, backend API'ye production domaini üzerinden bağlanmaktadır.</strong> (mahmut-backend... canlı bağlantısı sağlandı)</li>
+    <li><strong>Frontend ve backend Docker Compose ile deploy edilmiştir.</strong></li>
+    <li><strong>Dokploy, iki GitHub repository'sine başarıyla bağlanmıştır.</strong> (GitHub App ve Auto Deploy Webhook URL tanımlı)</li>
+    <li><strong>main branch'ine push sonrasında deployment otomatik başlamaktadır.</strong> (Auto Deploy geçmişi "Done" durumunda doğrulandı)</li>
+    <li><strong>Deployment için sunucuda manuel dosya kopyalama veya git pull yapılmamaktadır.</strong></li>
+    <li><strong>Dokploy deployment logları başarılı tamamlanmaktadır.</strong></li>
+    <li><strong>Backend health check başarılı sonuç vermektedir.</strong> ({"message":"Backend application is running"})</li>
+    <li><strong>Hassas bilgiler repository veya görsellerde açık tutulmamıştır.</strong> (Güvenlik yönetimi sağlandı)</li>
+  </ul>
+</div>
 
 </body>
 </html>
